@@ -27,7 +27,7 @@
 		"sharp": "0.32.0"
 	},
 	"devDependencies": {
-		"eslint": "8.39.0",
+		"eslint": "8.40.0",
 		"husky": "8.0.3",
 		"eslint-config-next": "13.4.1",
 		"prettier": "2.8.7",
