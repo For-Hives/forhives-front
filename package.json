@@ -19,7 +19,7 @@
 	},
 	"dependencies": {
 		"autoprefixer": "10.4.16",
-		"next": "13.4.19",
+		"next": "13.5.4",
 		"postcss": "8.4.31",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
@@ -29,7 +29,7 @@
 	"devDependencies": {
 		"eslint": "8.51.0",
 		"husky": "8.0.3",
-		"eslint-config-next": "13.4.19",
+		"eslint-config-next": "13.5.4",
 		"prettier": "2.8.7",
 		"prettier-plugin-tailwindcss": "0.2.7",
 		"lint-staged": "13.3.0"
