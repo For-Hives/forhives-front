@@ -30,7 +30,7 @@
 		"eslint": "8.56.0",
 		"husky": "8.0.3",
 		"eslint-config-next": "13.5.6",
-		"prettier": "2.8.7",
+		"prettier": "3.2.5",
 		"prettier-plugin-tailwindcss": "0.5.7",
 		"lint-staged": "15.2.1"
 	}
