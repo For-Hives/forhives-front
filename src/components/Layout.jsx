@@ -17,7 +17,7 @@ function Timeline() {
           <pattern id={id} width="6" height="8" patternUnits="userSpaceOnUse">
             <path
               d="M0 0H6M0 8H6"
-              className="stroke-yellow-900/10 xl:stroke-white/10 dark:stroke-white/10"
+              className="stroke-yellow-600/30 xl:stroke-yellow-500/30 dark:stroke-yellow-400/30"
               fill="none"
             />
           </pattern>
@@ -32,21 +32,21 @@ function Glow() {
   let id = useId()
 
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-gray-950 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+    <div className="absolute inset-0 -z-10 overflow-hidden bg-amber-950 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
       <svg
         className="absolute -bottom-48 left-[-40%] h-[80rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[80rem]"
         aria-hidden="true"
       >
         <defs>
           <radialGradient id={`${id}-desktop`} cx="100%">
-            <stop offset="0%" stopColor="rgba(56, 189, 248, 0.3)" />
-            <stop offset="53.95%" stopColor="rgba(0, 71, 255, 0.09)" />
-            <stop offset="100%" stopColor="rgba(10, 14, 23, 0)" />
+            <stop offset="0%" stopColor="rgba(252, 211, 77, 0.3)" />
+            <stop offset="53.95%" stopColor="rgba(245, 158, 11, 0.09)" />
+            <stop offset="100%" stopColor="rgba(120, 53, 15, 0)" />
           </radialGradient>
           <radialGradient id={`${id}-mobile`} cy="100%">
-            <stop offset="0%" stopColor="rgba(56, 189, 248, 0.3)" />
-            <stop offset="53.95%" stopColor="rgba(0, 71, 255, 0.09)" />
-            <stop offset="100%" stopColor="rgba(10, 14, 23, 0)" />
+            <stop offset="0%" stopColor="rgba(252, 211, 77, 0.3)" />
+            <stop offset="53.95%" stopColor="rgba(245, 158, 11, 0.09)" />
+            <stop offset="100%" stopColor="rgba(120, 53, 15, 0)" />
           </radialGradient>
         </defs>
         <rect
@@ -62,7 +62,7 @@ function Glow() {
           className="lg:hidden"
         />
       </svg>
-      <div className="absolute inset-x-0 bottom-0 right-0 h-px bg-white mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px" />
+      <div className="absolute inset-x-0 bottom-0 right-0 h-px bg-yellow-300 mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px" />
     </div>
   )
 }

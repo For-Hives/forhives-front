@@ -66,11 +66,27 @@ export function Intro() {
         </IconLink>
       </div>
       <h2 className="mt-8 text-lg font-semibold text-white">Our Projects</h2>
-      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
         <ProjectLink href="https://forvoyez.com/" title="ForVoyez" />
         <ProjectLink href="https://formenu.fr/" title="ForMenu" />
         <ProjectLink href="https://my-makeup.fr/" title="My Makeup" />
         <ProjectLink href="https://artriste.cc/" title="Artriste" />
+        <ProjectLink
+          href="https://github.com/CinquinAndy/plugin-auto-alt-caption-title-on-images-ai-enhanced"
+          title="Strapi Plugin SEO"
+        />
+        <ProjectLink
+          href="https://github.com/For-Hives/forhives-base"
+          title="ForHives Base"
+        />
+        <ProjectLink
+          href="https://github.com/CinquinAndy/notes-to-strapi-export-article-ai"
+          title="Plugin Obsidian"
+        />
+        <ProjectLink
+          href="https://github.com/CinquinAndy/export-repository-to-prompt-for-llm"
+          title="Script Export Repo"
+        />
       </div>
       <h2 className="mt-8 text-lg font-semibold text-white">Our Portfolios</h2>
       <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -86,12 +102,12 @@ function ProjectLink({ href, title }) {
   return (
     <Link
       href={href}
-      className="flex items-center space-x-2 text-sm text-gray-400 transition-colors duration-200 hover:text-white"
+      className="flex items-center gap-1 text-sm text-gray-400 transition-colors duration-200 hover:text-white"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <LinkIcon className="h-4 w-4" />
-      <span>{title}</span>
+      <LinkIcon className="!h-3 !w-3" />
+      <p>{title}</p>
     </Link>
   )
 }
