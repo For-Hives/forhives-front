@@ -20,14 +20,31 @@ const jost = localFont({
 })
 
 export const metadata = {
-  title: 'Commit - Open-source Git client for macOS minimalists',
+  title: 'ForHives - Collaborative Project Community',
   description:
-    'Commit is a lightweight Git client you can open from anywhere any time you’re ready to commit your work with a single keyboard shortcut. It’s fast, beautiful, and completely unnecessary.',
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
+    "Join ForHives, the community where every hive is a project, every idea is a bee, and passion is the queen that governs them. Let's work together to bring your projects to life and change the world!",
+  openGraph: {
+    title: 'ForHives - Bring Your Projects to Life',
+    description:
+      'A collaborative community to transform your ideas into concrete projects',
+    type: 'website',
+    url: 'https://forhives.com',
+    images: [
+      {
+        url: 'https://forhives.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'ForHives Logo',
+      },
+    ],
   },
+  keywords: [
+    'ForHives',
+    'collaborative projects',
+    'innovation',
+    'community',
+    'project development',
+  ],
 }
 
 export default function RootLayout({ children }) {
