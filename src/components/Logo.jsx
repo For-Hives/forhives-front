@@ -1,4 +1,5 @@
 import { useId } from 'react'
+
 import { BeeIcon } from '@/components/BeeIcon'
 
 export function Logo(props) {

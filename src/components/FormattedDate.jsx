@@ -1,8 +1,8 @@
 const dateFormatter = new Intl.DateTimeFormat('en-US', {
 	year: 'numeric',
+	timeZone: 'UTC',
 	month: 'short',
 	day: 'numeric',
-	timeZone: 'UTC',
 })
 
 export function FormattedDate({ date, ...props }) {

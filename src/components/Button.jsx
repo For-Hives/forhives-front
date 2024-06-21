@@ -11,7 +11,7 @@ function ButtonInner({ arrow = false, children }) {
 	)
 }
 
-export function Button({ className, arrow, children, ...props }) {
+export function Button({ className, children, arrow, ...props }) {
 	className = clsx(
 		className,
 		'group relative isolate flex-none rounded-md py-1.5 text-[0.8125rem]/6 font-semibold text-white',
