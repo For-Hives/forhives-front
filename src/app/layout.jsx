@@ -31,7 +31,7 @@ export const metadata = {
     url: 'https://forhives.com',
     images: [
       {
-        url: 'https://forhives.com/og-image.jpg',
+        url: 'https://forhives.com/og-image.svg',
         width: 1200,
         height: 630,
         alt: 'ForHives Logo',
