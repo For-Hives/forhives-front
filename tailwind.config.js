@@ -8,7 +8,7 @@ module.exports = {
         '2xs': '.6875rem',
       },
       fontFamily: {
-        sans: 'var(--font-inter)',
+        sans: 'var(--font-source-sans)',
         display: 'var(--font-jost)',
       },
       opacity: {
