@@ -9,7 +9,7 @@ module.exports = {
       },
       fontFamily: {
         sans: 'var(--font-inter)',
-        display: 'var(--font-mona-sans)',
+        display: 'var(--font-jost)',
       },
       opacity: {
         2.5: '0.025',

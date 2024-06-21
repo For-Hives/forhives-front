@@ -13,9 +13,9 @@ const inter = Inter({
 })
 
 const monaSans = localFont({
-  src: '../fonts/Mona-Sans.var.woff2',
+  src: '../fonts/Jost.var.woff2',
   display: 'swap',
-  variable: '--font-mona-sans',
+  variable: '--font-jost',
   weight: '200 900',
 })
 
@@ -33,7 +33,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
+      lang="fr"
       className={clsx('h-full antialiased', inter.variable, monaSans.variable)}
       suppressHydrationWarning
     >
