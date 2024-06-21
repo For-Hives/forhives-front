@@ -19,13 +19,14 @@ function GitHubIcon(props) {
   )
 }
 
-function FeedIcon(props) {
+function LinkIcon(props) {
   return (
-    <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor" {...props}>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M2.5 3a.5.5 0 0 1 .5-.5h.5c5.523 0 10 4.477 10 10v.5a.5.5 0 0 1-.5.5h-.5a.5.5 0 0 1-.5-.5v-.5A8.5 8.5 0 0 0 3.5 4H3a.5.5 0 0 1-.5-.5V3Zm0 4.5A.5.5 0 0 1 3 7h.5A5.5 5.5 0 0 1 9 12.5v.5a.5.5 0 0 1-.5.5H8a.5.5 0 0 1-.5-.5v-.5a4 4 0 0 0-4-4H3a.5.5 0 0 1-.5-.5v-.5Zm0 5a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
       />
     </svg>
   )
@@ -40,21 +41,57 @@ export function Intro() {
         </Link>
       </div>
       <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
-        Open-source Git client{' '}
-        <span className="text-yellow-300">for macOS minimalists</span>
+        Collaborative Hive for{' '}
+        <span className="text-yellow-300">Innovative Projects</span>
       </h1>
-      <p className="mt-4 text-sm/6 text-gray-300">todo</p>
+      <p className="mt-4 text-sm/6 text-gray-300">
+        Where every idea is a bee, and passion is the queen that governs them
+        all.
+      </p>
+      <h2 className="mt-8 text-lg font-semibold text-white">Resources</h2>
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
-        <IconLink href="#" icon={BookIcon} className="flex-none">
-          Documentation
-        </IconLink>
-        <IconLink href="#" icon={GitHubIcon} className="flex-none">
+        <IconLink
+          href="https://github.com/For-Hives"
+          icon={GitHubIcon}
+          className="flex-none"
+        >
           GitHub
         </IconLink>
-        <IconLink href="/feed.xml" icon={FeedIcon} className="flex-none">
-          RSS
+        <IconLink
+          href="https://publish.obsidian.md/forhives-wiki"
+          icon={BookIcon}
+          className="flex-none"
+        >
+          Obsidian Documentation
         </IconLink>
       </div>
+      <h2 className="mt-8 text-lg font-semibold text-white">Our Projects</h2>
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ProjectLink href="https://forvoyez.com/" title="ForVoyez" />
+        <ProjectLink href="https://formenu.fr/" title="ForMenu" />
+        <ProjectLink href="https://my-makeup.fr/" title="My Makeup" />
+        <ProjectLink href="https://artriste.cc/" title="Artriste" />
+      </div>
+      <h2 className="mt-8 text-lg font-semibold text-white">Our Portfolios</h2>
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ProjectLink href="https://andy-cinquin.fr/" title="Andy's Portfolio" />
+        <ProjectLink href="https://brev.al/" title="Bréval's Portfolio" />
+        <ProjectLink href="https://wadefade.fr/" title="Mathis's Portfolio" />
+      </div>
     </>
+  )
+}
+
+function ProjectLink({ href, title }) {
+  return (
+    <Link
+      href={href}
+      className="flex items-center space-x-2 text-sm text-gray-400 transition-colors duration-200 hover:text-white"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <LinkIcon className="h-4 w-4" />
+      <span>{title}</span>
+    </Link>
   )
 }
