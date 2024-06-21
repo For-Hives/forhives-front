@@ -5,9 +5,9 @@ export function Logo(props) {
   let id = useId()
 
   return (
-    <div className={'flex items-center gap-2'}>
-      <BeeIcon />
-      <h2 className={'text-white'}>ForHives</h2>
+    <div className={'flex items-center gap-4'}>
+      <BeeIcon className={'size-16'} />
+      <h2 className={'text-3xl font-black text-white'}>ForHives</h2>
     </div>
   )
 }
