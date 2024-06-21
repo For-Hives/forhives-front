@@ -1,0 +1,8 @@
+.github
+.husky
+.idea
+.next
+bruno
+media
+node_modules
+.env*
