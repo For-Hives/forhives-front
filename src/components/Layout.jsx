@@ -17,7 +17,7 @@ function Timeline() {
           <pattern id={id} width="6" height="8" patternUnits="userSpaceOnUse">
             <path
               d="M0 0H6M0 8H6"
-              className="stroke-[#5C7E80]/20 xl:stroke-[#7CA6A8]/20 dark:stroke-[#7CA6A8]/20"
+              className="stroke-[#5C7E80]/40 xl:stroke-[#7CA6A8]/40 dark:stroke-[#7CA6A8]/40"
               fill="none"
             />
           </pattern>

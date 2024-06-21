@@ -49,7 +49,7 @@ export function Intro() {
         all.
       </p>
       <h2 className="mt-8 text-lg font-semibold text-white">Resources</h2>
-      <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
+      <div className="mt-8 flex flex-wrap justify-center gap-x-3 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconLink
           href="https://github.com/For-Hives"
           icon={GitHubIcon}
