@@ -3,7 +3,7 @@
 
 body {
     --sb-track-color: #1b2324;
-    --sb-thumb-color: #ffffff;
+    --sb-thumb-color: rgba(255,255,255,0.7);
     --sb-size: 8px;
 }
 
@@ -13,12 +13,12 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
     background: var(--sb-track-color);
-    border-radius: 3px;
+    border-radius: 1px;
 }
 
 body::-webkit-scrollbar-thumb {
     background: var(--sb-thumb-color);
-    border-radius: 3px;
+    border-radius: 1px;
 
 }
 
