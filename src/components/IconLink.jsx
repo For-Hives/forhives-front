@@ -2,10 +2,10 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 export function IconLink({
-	children,
-	className,
 	compact = false,
 	icon: Icon,
+	className,
+	children,
 	...props
 }) {
 	return (

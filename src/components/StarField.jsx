@@ -65,7 +65,7 @@ const constellations = [
 	],
 ]
 
-function Star({ blurId, point: [cx, cy, dim, blur] }) {
+function Star({ point: [cx, cy, dim, blur], blurId }) {
 	let groupRef = useRef(null)
 	let ref = useRef(null)
 
@@ -85,10 +85,10 @@ function Star({ blurId, point: [cx, cy, dim, blur] }) {
 					scale: dim ? [1, 1.2] : [1.2, 1],
 				},
 				{
-					delay,
 					duration: Math.random() * 2 + 2,
 					direction: 'alternate',
 					repeat: Infinity,
+					delay,
 				}
 			),
 		]
@@ -101,18 +101,18 @@ function Star({ blurId, point: [cx, cy, dim, blur] }) {
 	}, [dim])
 
 	return (
-		<g ref={groupRef} className="opacity-0">
+		<g className="opacity-0" ref={groupRef}>
 			<circle
-				ref={ref}
 				cx={cx}
 				cy={cy}
+				filter={blur ? `url(#${blurId})` : undefined}
 				r={1}
+				ref={ref}
 				style={{
 					transformOrigin: `${cx / 16}rem ${cy / 16}rem`,
-					opacity: dim ? 0.2 : 1,
 					transform: `scale(${dim ? 1 : 1.2})`,
+					opacity: dim ? 0.2 : 1,
 				}}
-				filter={blur ? `url(#${blurId})` : undefined}
 			/>
 		</g>
 	)
@@ -134,8 +134,8 @@ function Constellation({ points, blurId }) {
 		let sequence = [
 			[
 				ref.current,
-				{ strokeDashoffset: 0, visibility: 'visible' },
-				{ duration: 5, delay: Math.random() * 3 + 2 },
+				{ visibility: 'visible', strokeDashoffset: 0 },
+				{ delay: Math.random() * 3 + 2, duration: 5 },
 			],
 		]
 
@@ -157,18 +157,18 @@ function Constellation({ points, blurId }) {
 	return (
 		<>
 			<path
+				className="invisible"
+				d={`M ${points.join('L')}`}
+				fill="transparent"
+				pathLength={1}
 				ref={ref}
 				stroke="white"
-				strokeOpacity="0.2"
 				strokeDasharray={1}
 				strokeDashoffset={1}
-				pathLength={1}
-				fill="transparent"
-				d={`M ${points.join('L')}`}
-				className="invisible"
+				strokeOpacity="0.2"
 			/>
 			{uniquePoints.map((point, pointIndex) => (
-				<Star key={pointIndex} point={point} blurId={blurId} />
+				<Star blurId={blurId} key={pointIndex} point={point} />
 			))}
 		</>
 	)
@@ -179,13 +179,13 @@ export function StarField({ className }) {
 
 	return (
 		<svg
-			viewBox="0 0 881 211"
-			fill="white"
 			aria-hidden="true"
 			className={clsx(
 				'pointer-events-none absolute w-[55.0625rem] origin-top-right rotate-[30deg] overflow-visible opacity-70',
 				className
 			)}
+			fill="white"
+			viewBox="0 0 881 211"
 		>
 			<defs>
 				<filter id={blurId}>
@@ -194,13 +194,13 @@ export function StarField({ className }) {
 			</defs>
 			{constellations.map((points, constellationIndex) => (
 				<Constellation
+					blurId={blurId}
 					key={constellationIndex}
 					points={points}
-					blurId={blurId}
 				/>
 			))}
 			{stars.map((point, pointIndex) => (
-				<Star key={pointIndex} point={point} blurId={blurId} />
+				<Star blurId={blurId} key={pointIndex} point={point} />
 			))}
 		</svg>
 	)
