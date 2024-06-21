@@ -31,18 +31,18 @@ This project is built with:
 ### Installation
 
 1. Clone the repository:
-   ```
+```
 git clone https://github.com/For-Hives/forhives-front.git
-   ```
+```
 
 2. Install dependencies:
-   ```
+```
 npm install
-   ```
+```
    or
-   ```
+```
 yarn install
-   ```
+```
 
 ### Development
 
@@ -77,14 +77,6 @@ npm run start
 - `npm run lint:fix`: Runs ESLint and fixes issues
 - `npm run format`: Runs Prettier to format all files
 - `npm run format:check`: Checks if files are formatted correctly
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more details.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
