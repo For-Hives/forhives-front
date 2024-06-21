@@ -51,11 +51,7 @@ export function Intro() {
         Open-source Git client{' '}
         <span className="text-yellow-300">for macOS minimalists</span>
       </h1>
-      <p className="mt-4 text-sm/6 text-gray-300">
-        Commit is a lightweight Git client you can open from anywhere any time
-        you’re ready to commit your work with a single keyboard shortcut. It’s
-        fast, beautiful, and completely unnecessary.
-      </p>
+      <p className="mt-4 text-sm/6 text-gray-300">todo</p>
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconLink href="#" icon={BookIcon} className="flex-none">
           Documentation

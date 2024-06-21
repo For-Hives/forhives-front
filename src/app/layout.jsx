@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google'
+import { Source_Sans_3 } from 'next/font/google'
 import localFont from 'next/font/local'
 import clsx from 'clsx'
 
@@ -6,13 +6,13 @@ import { Providers } from '@/app/providers'
 
 import '@/styles/tailwind.css'
 
-const inter = Inter({
+const sourceSans3 = Source_Sans_3({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-source-sans',
 })
 
-const monaSans = localFont({
+const jost = localFont({
   src: '../fonts/Jost.var.woff2',
   display: 'swap',
   variable: '--font-jost',
@@ -34,7 +34,11 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="fr"
-      className={clsx('h-full antialiased', inter.variable, monaSans.variable)}
+      className={clsx(
+        'h-full antialiased',
+        sourceSans3.variable,
+        jost.variable,
+      )}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-white dark:bg-gray-950">
