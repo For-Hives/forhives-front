@@ -1,10 +1,10 @@
-import { toString } from 'mdast-util-to-string'
-import { mdxAnnotations } from 'mdx-annotations'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeSlug from 'rehype-slug'
 import { remarkRehypeWrap } from 'remark-rehype-wrap'
-import shiki from 'shiki'
+import { mdxAnnotations } from 'mdx-annotations'
+import { toString } from 'mdast-util-to-string'
 import { visit } from 'unist-util-visit'
+import rehypeSlug from 'rehype-slug'
+import shiki from 'shiki'
 
 let highlighter
 
@@ -29,9 +29,9 @@ function rehypeShiki() {
 				node.children = []
 				node.properties.highlightedCode = shiki.renderToHtml(tokens, {
 					elements: {
-						pre: ({ children }) => children,
-						code: ({ children }) => children,
 						line: ({ children }) => `<span>${children}</span>`,
+						code: ({ children }) => children,
+						pre: ({ children }) => children,
 					},
 				})
 			}
@@ -47,8 +47,6 @@ export const rehypePlugins = [
 	[
 		remarkRehypeWrap,
 		{
-			node: { type: 'element', tagName: 'article' },
-			start: 'element[tagName=hr]',
 			transform: article => {
 				article.children.splice(0, 1)
 				let heading = article.children.find(n => n.tagName === 'h2')
@@ -56,6 +54,8 @@ export const rehypePlugins = [
 				heading.properties = {}
 				return article
 			},
+			node: { tagName: 'article', type: 'element' },
+			start: 'element[tagName=hr]',
 		},
 	],
 ]

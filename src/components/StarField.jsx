@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useId, useRef } from 'react'
-import clsx from 'clsx'
+
 import { animate, timeline } from 'motion'
+import clsx from 'clsx'
 
 const stars = [
 	[4, 4, true, true],
