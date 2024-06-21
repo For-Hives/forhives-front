@@ -62,7 +62,7 @@ export function Intro() {
 					href="https://publish.obsidian.md/forhives-wiki"
 					icon={BookIcon}
 				>
-					Obsidian Documentation
+					Wiki
 				</IconLink>
 			</div>
 			<h2 className="mt-8 text-lg font-semibold text-white">Our Projects</h2>

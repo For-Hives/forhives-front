@@ -32,7 +32,7 @@ function Glow() {
 	let id = useId()
 
 	return (
-		<div className="absolute inset-0 -z-10 overflow-hidden bg-[#1B2324] lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
+		<div className="absolute inset-0 -z-10 overflow-hidden bg-[#0B0F0F] lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-[32rem]">
 			<svg
 				aria-hidden="true"
 				className="absolute -bottom-48 left-[-40%] h-[80rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[80rem]"
