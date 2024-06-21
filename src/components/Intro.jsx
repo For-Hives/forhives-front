@@ -89,10 +89,10 @@ export function Intro() {
         />
       </div>
       <h2 className="mt-8 text-lg font-semibold text-white">Our Portfolios</h2>
-      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <ProjectLink href="https://andy-cinquin.fr/" title="Andy's Portfolio" />
-        <ProjectLink href="https://brev.al/" title="Bréval's Portfolio" />
-        <ProjectLink href="https://wadefade.fr/" title="Mathis's Portfolio" />
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-3">
+        <ProjectLink href="https://andy-cinquin.fr/" title="Andy" />
+        <ProjectLink href="https://brev.al/" title="Bréval" />
+        <ProjectLink href="https://wadefade.fr/" title="Mathis" />
       </div>
     </>
   )
@@ -102,7 +102,7 @@ function ProjectLink({ href, title }) {
   return (
     <Link
       href={href}
-      className="flex items-center gap-1 text-sm text-gray-400 transition-colors duration-200 hover:text-white"
+      className="flex items-center gap-1 text-sm text-gray-300 transition-colors duration-200 hover:text-white"
       target="_blank"
       rel="noopener noreferrer"
     >
