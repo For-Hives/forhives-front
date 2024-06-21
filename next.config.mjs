@@ -1,8 +1,8 @@
 import nextMDX from '@next/mdx'
 
-import { recmaPlugins } from './mdx/recma.mjs'
-import { rehypePlugins } from './mdx/rehype.mjs'
-import { remarkPlugins } from './mdx/remark.mjs'
+import { recmaPlugins } from '@/mdx/recma.mjs'
+import { rehypePlugins } from '@/mdx/rehype.mjs'
+import { remarkPlugins } from '@/mdx/remark.mjs'
 
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
