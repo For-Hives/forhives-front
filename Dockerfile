@@ -4,6 +4,7 @@ FROM node:20-alpine
 WORKDIR /usr/app
 
 # Copie des fichiers nécessaires
+COPY . .
 COPY ./.next ./.next
 COPY ./package*.json .
 COPY ./src ./src
