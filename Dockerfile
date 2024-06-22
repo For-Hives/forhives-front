@@ -14,7 +14,6 @@ WORKDIR /usr/app
 
 COPY --from=builder /usr/app/package*.json ./
 COPY --from=builder /usr/app/.next ./.next
-COPY --from=builder /usr/app/public ./public
 COPY --from=builder /usr/app/next.config.js ./
 
 RUN npm ci --production
