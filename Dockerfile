@@ -1,16 +1,19 @@
-FROM node:20-alpine AS base
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
+FROM node:20-alpine
 
-FROM node:20-alpine AS runner
-WORKDIR /app
-COPY . .
-COPY --from=base /app/ ./
-COPY --from=base /app/.next ./.next
-COPY --from=base /app/package*.json ./
-COPY --from=base /app/.next ./.next
-COPY --from=base /app/node_modules ./node_modules
+WORKDIR /usr/app
+
+COPY ./.next ./.next
+COPY ./package*.json .
+COPY ./src ./src
+COPY ./next* .
+COPY ./next.config.js .
+
+ENV NEXT_SHARP_PATH=./node_modules/sharp
+
+RUN npm ci --omit=dev --ignore-scripts
+
+# Exposition du port 3000
+EXPOSE 3000
+
+# Execution du serveur
 CMD ["npm", "start"]
