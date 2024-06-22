@@ -29,3 +29,6 @@ jobs:
           context: .
           push: false
           tags: ${{ secrets.APP_IMAGE }}
+          file: ./Dockerfile
+          build-args: |
+            NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
