@@ -3,16 +3,16 @@ import { IconLink } from '@/components/IconLink'
 
 export default function NotFound() {
 	return (
-		<div className="relative isolate flex flex-auto flex-col items-center justify-center overflow-hidden bg-gray-950 text-center">
+		<div className="relative isolate flex flex-auto flex-col items-center justify-center overflow-hidden bg-[#0B0F0F] text-center">
 			<svg
 				aria-hidden="true"
 				className="absolute left-1/2 top-[-10vh] -z-10 h-[120vh] w-[120vw] min-w-[60rem] -translate-x-1/2"
 			>
 				<defs>
 					<radialGradient cy="0%" id="gradient">
-						<stop offset="0%" stopColor="rgba(56, 189, 248, 0.3)" />
-						<stop offset="53.95%" stopColor="rgba(0, 71, 255, 0.09)" />
-						<stop offset="100%" stopColor="rgba(10, 14, 23, 0)" />
+						<stop offset="0%" stopColor="rgba(124, 166, 168, 0.2)" />
+						<stop offset="53.95%" stopColor="rgba(60, 78, 80, 0.6)" />
+						<stop offset="100%" stopColor="rgba(44, 62, 64, 0)" />
 					</radialGradient>
 				</defs>
 				<rect fill="url(#gradient)" height="100%" width="100%" />
