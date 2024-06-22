@@ -5,9 +5,9 @@ WORKDIR /usr/app
 
 # Copie des fichiers nécessaires
 COPY ./.next ./.next
-COPY old/public ./public
-COPY old/package.json .
-COPY old/package-lock.json .
+COPY ./public ./public
+COPY ./package.json .
+COPY ./package-lock.json .
 COPY ./next* .
 
 RUN npm ci --omit=dev --ignore-scripts
