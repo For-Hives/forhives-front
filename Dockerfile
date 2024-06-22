@@ -1,19 +1,26 @@
+FROM node:20-alpine AS builder
+
+WORKDIR /usr/app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+RUN npm run build
+
 FROM node:20-alpine
 
 WORKDIR /usr/app
 
-COPY ./.next ./.next
-COPY ./package*.json .
-COPY ./src ./src
-COPY ./next* .
-COPY ./next.config.js .
+COPY --from=builder /usr/app/package*.json ./
+COPY --from=builder /usr/app/.next ./.next
+COPY --from=builder /usr/app/public ./public
+COPY --from=builder /usr/app/next.config.js ./
+
+RUN npm ci --production
 
 ENV NEXT_SHARP_PATH=./node_modules/sharp
 
-RUN npm ci --omit=dev --ignore-scripts
-
-# Exposition du port 3000
 EXPOSE 3000
 
-# Execution du serveur
 CMD ["npm", "start"]

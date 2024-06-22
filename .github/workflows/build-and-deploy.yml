@@ -26,6 +26,8 @@ jobs:
         name: Build the app
         continue-on-error: true
         run: npm run build
+      - name: List directory contents
+        run: ls -la
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
@@ -44,5 +46,10 @@ jobs:
           file: ./Dockerfile
           build-args: |
             NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
+        env:
+          DOCKER_BUILDKIT: 1
+      - name: Display Docker build logs
+        if: failure()
+        run: docker buildx build . --progress=plain
       - name: Deploy on cap rover
         run: docker run caprover/cli-caprover:latest caprover deploy --caproverUrl "${{ secrets.APP_URL }}" --appToken "${{ secrets.APP_TOKEN }}" --caproverApp "${{ secrets.APP_NAME }}" --imageName "${{ secrets.APP_IMAGE }}"
