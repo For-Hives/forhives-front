@@ -1,4 +1,7 @@
 name: Build
+env:
+  TOTAL_RUNNERS: 1
+  NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
 
 on:
   pull_request:
@@ -10,21 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           cache: 'npm'
           node-version: 20.x
       - name: Install dependencies in production
         run: npm ci --ignore-scripts
-      - name: Cache next.js build
-        id: cache-npm
-        uses: actions/cache@v4
-        with:
-          path: .next/
-          key: ${{ runner.os }}-next-build-${{ hashFiles('src/','public/','next*','package*','jsconfig.json') }}
-      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: Build the app
-        continue-on-error: true
+      - name: Build the app
+        continue-on-error: false
         run: npm run build
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -36,6 +32,4 @@ jobs:
           context: .
           push: false
           tags: ${{ secrets.APP_IMAGE }}
-          file: ./Dockerfile
-          build-args: |
-            NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          build-args: NEXT_PUBLIC_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
