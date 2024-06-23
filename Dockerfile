@@ -20,6 +20,7 @@ RUN npm ci --omit=dev --ignore-scripts
 
 COPY --from=builder /usr/app/.next ./.next
 COPY --from=builder /usr/app/next.config.mjs ./
+COPY --from=builder /usr/app/mdx ./
 
 ENV NEXT_SHARP_PATH=./node_modules/sharp
 
