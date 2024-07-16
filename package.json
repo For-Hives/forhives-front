@@ -50,7 +50,7 @@
 		"remark-rehype-wrap": "0.0.5",
 		"remark-unwrap-images": "4.0.0",
 		"shiki": "0.14.7",
-		"tailwindcss": "3.4.5",
+		"tailwindcss": "3.4.6",
 		"unist-util-visit": "5.0.0",
 		"eslint": "8.57.0",
 		"eslint-config-next": "14.2.5",
