@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import { Providers } from '@/app/providers'
 
 import '@/styles/tailwind.css'
+import Script from 'next/script'
 
 const sourceSans3 = Source_Sans_3({
 	variable: '--font-source-sans',
@@ -58,6 +59,12 @@ export default function RootLayout({ children }) {
 			lang="fr"
 			suppressHydrationWarning
 		>
+			<Script
+				async
+				src="https://umami.wadefade.fr/script.js"
+				strategy={'afterInteractive'}
+				data-website-id="94a58ce1-c90b-4492-ae25-d3e894084c44"
+			/>
 			<body className="flex min-h-full flex-col bg-white dark:bg-gray-950">
 				<Providers>{children}</Providers>
 			</body>
