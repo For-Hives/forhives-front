@@ -33,7 +33,7 @@
 		"commander": "12.1.0",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-no-only-tests": "3.3.0",
-		"eslint-plugin-perfectionist": "3.4.0",
+		"eslint-plugin-perfectionist": "3.5.0",
 		"eslint-plugin-prettier": "5.2.1",
 		"feed": "4.2.2",
 		"mdast-util-to-string": "4.0.0",
