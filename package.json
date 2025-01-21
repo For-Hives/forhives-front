@@ -30,7 +30,7 @@
 		"autoprefixer": "10.4.20",
 		"cheerio": "1.0.0",
 		"clsx": "2.1.1",
-		"commander": "12.1.0",
+		"commander": "13.1.0",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-no-only-tests": "3.3.0",
 		"eslint-plugin-perfectionist": "3.9.1",
