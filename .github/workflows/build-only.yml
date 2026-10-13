@@ -12,16 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
         with:
-          cache: 'npm'
+          version: 9
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          cache: 'pnpm'
           node-version: 20.x
       - name: Install dependencies in production
-        run: npm ci --ignore-scripts
+        run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Build the app
         continue-on-error: false
-        run: npm run build
+        run: pnpm build
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
@@ -31,5 +35,4 @@ jobs:
         with:
           context: .
           push: false
-          tags: ${{ secrets.APP_IMAGE }}
-          build-args: NEXT_PUBLIC_URL=${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          tags: forhives-front:ci
