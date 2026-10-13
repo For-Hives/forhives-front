@@ -1,3 +1,6 @@
+# The CapRover platform this workflow deploys to has been retired and the site
+# is now deployed elsewhere. Kept for reference only: it no longer runs
+# automatically and can only be started manually (workflow_dispatch).
 name: Build and Deploy on prod
 
 env:
@@ -5,8 +8,7 @@ env:
   NODE_ENV: ${{ secrets.NODE_ENV }}
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build-and-push:

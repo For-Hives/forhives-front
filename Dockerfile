@@ -2,21 +2,25 @@ FROM node:22-alpine AS builder
 
 WORKDIR /usr/app
 
-COPY package*.json ./
+RUN npm install -g pnpm@9
 
-RUN npm ci
+COPY package.json pnpm-lock.yaml ./
+
+RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-RUN npm run build
+RUN pnpm build
 
 FROM node:22-alpine
 
 WORKDIR /usr/app
 
-COPY package*.json ./
+RUN npm install -g pnpm@9
 
-RUN npm ci --omit=dev --ignore-scripts
+COPY package.json pnpm-lock.yaml ./
+
+RUN pnpm install --frozen-lockfile --prod --ignore-scripts
 
 COPY --from=builder /usr/app/.next ./.next
 COPY --from=builder /usr/app/next.config.mjs ./
