@@ -8,6 +8,11 @@
 			"automerge": false,
 			"automergeType": "pr",
 			"automergeStrategy": "squash"
+		},
+		{
+			"description": "shiki 1+ réécrit l'API (getHighlighter, codeToThemedTokens et renderToHtml n'existent plus) utilisée par mdx/rehype.mjs. La page n'a aucun bloc de code aujourd'hui, donc rien pour vérifier une migration : rester en 0.14 jusqu'à ce qu'un contenu en ait besoin.",
+			"matchPackageNames": ["shiki"],
+			"allowedVersions": "<1"
 		}
 	]
 }
