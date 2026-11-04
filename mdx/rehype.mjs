@@ -1,4 +1,5 @@
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeUnwrapImages from 'rehype-unwrap-images'
 import { remarkRehypeWrap } from 'remark-rehype-wrap'
 import { mdxAnnotations } from 'mdx-annotations'
 import { toString } from 'mdast-util-to-string'
@@ -41,6 +42,7 @@ function rehypeShiki() {
 
 export const rehypePlugins = [
 	mdxAnnotations.rehype,
+	rehypeUnwrapImages,
 	rehypeSlug,
 	[rehypeAutolinkHeadings, { behavior: 'wrap', test: ['h2'] }],
 	rehypeShiki,
