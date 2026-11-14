@@ -31,7 +31,7 @@
 		"cheerio": "1.2.0",
 		"clsx": "2.1.1",
 		"commander": "13.1.0",
-		"eslint": "9.39.5",
+		"eslint": "10.15.0",
 		"eslint-config-next": "15.5.28",
 		"eslint-config-prettier": "10.1.8",
 		"eslint-plugin-no-only-tests": "3.4.0",
